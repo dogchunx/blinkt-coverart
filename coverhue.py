@@ -2,6 +2,7 @@ import urllib.request
 import requests
 import time
 import json
+import blinkt
 from colorthief import ColorThief
 
 while True:
@@ -12,6 +13,8 @@ while True:
                     'accept': 'application/json',
                     'Authorization': 'Bearer BQCxTudro89XG4qAVSwJVSz3TGO_eGIy9hJY7uxDV4BGysFTtLhwYctm9K1J9iLAOrb9PHxs3xovie49gsloxML-D6FSTtcMvKRirA9U5hmkkUrT1OaHD8xdN63fJVOBWLXiZy6YzXKbRvWRDA'})
 
+    blinkt.set_clear_on_exit
+    
     if req.status_code == 200:
 
         data = json.loads(req.text)
@@ -25,6 +28,10 @@ while True:
         color_thief = ColorThief('image.jpg')
 
         dominant_color = color_thief.get_color(quality=1)
+
+        blinkt.set_all(255, 0, 0, 0.7)
+
+        blinkt.show()
 
         print(dominant_color)
     else:
