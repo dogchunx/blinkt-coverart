@@ -29,7 +29,7 @@ while True:
 
         dominant_color = color_thief.get_color(quality=1)
 
-        blinkt.set_all(dominant_color[0], dominant_color[1], dominant_color[2], 0.7)
+        blinkt.set_all(dominant_color[0], dominant_color[1], dominant_color[2], 0.9)
 
         blinkt.show()
 
