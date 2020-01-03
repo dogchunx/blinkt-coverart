@@ -7,6 +7,12 @@ from colorthief import ColorThief
 
 lastAlbum = ''
 
+blinkt.set_clear_on_exit
+
+blinkt.set_all(0, 255, 0)
+
+blinkt.show()
+
 while True:
 
     req = requests.get(
@@ -14,12 +20,6 @@ while True:
         headers={   'content-type': 'application/json', 
                     'accept': 'application/json',
                     'Authorization': 'Bearer BQCxTudro89XG4qAVSwJVSz3TGO_eGIy9hJY7uxDV4BGysFTtLhwYctm9K1J9iLAOrb9PHxs3xovie49gsloxML-D6FSTtcMvKRirA9U5hmkkUrT1OaHD8xdN63fJVOBWLXiZy6YzXKbRvWRDA'})
-
-    blinkt.set_clear_on_exit
-
-    blinkt.set_all(0, 255, 0)
-
-    blinkt.show()
 
     if req.status_code == 200:
 
