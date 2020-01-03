@@ -17,6 +17,10 @@ while True:
 
     blinkt.set_clear_on_exit
 
+    blinkt.set_all(0, 255, 0)
+
+    blinkt.show()
+
     if req.status_code == 200:
 
         data = json.loads(req.text)
