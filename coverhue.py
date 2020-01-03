@@ -10,7 +10,7 @@ while True:
         url = 'https://api.spotify.com/v1/me/player/currently-playing', 
         headers={   'content-type': 'application/json', 
                     'accept': 'application/json',
-                    'Authorization': 'Bearer BQDBWjyyFLb1_p2pofulhZMLxE8-1LfuMRQSM1i8AHi0M_j6YFqfTjVmvcI6Bh7F9OtCYDmiQeYpL8pzvwQGWEo4l3ExINyu0TInZqbgJoUPzrU7sSNx4pR250Imw0HgFXJBTdTuhqqsFaXrKg'})
+                    'Authorization': 'Bearer BQCxTudro89XG4qAVSwJVSz3TGO_eGIy9hJY7uxDV4BGysFTtLhwYctm9K1J9iLAOrb9PHxs3xovie49gsloxML-D6FSTtcMvKRirA9U5hmkkUrT1OaHD8xdN63fJVOBWLXiZy6YzXKbRvWRDA'})
 
     if req.status_code == 200:
 
@@ -27,5 +27,7 @@ while True:
         dominant_color = color_thief.get_color(quality=1)
 
         print(dominant_color)
+    else:
+        print(req)
         
     time.sleep(5)
