@@ -14,7 +14,7 @@ while True:
                     'Authorization': 'Bearer BQCxTudro89XG4qAVSwJVSz3TGO_eGIy9hJY7uxDV4BGysFTtLhwYctm9K1J9iLAOrb9PHxs3xovie49gsloxML-D6FSTtcMvKRirA9U5hmkkUrT1OaHD8xdN63fJVOBWLXiZy6YzXKbRvWRDA'})
 
     blinkt.set_clear_on_exit
-    
+
     if req.status_code == 200:
 
         data = json.loads(req.text)
@@ -29,7 +29,7 @@ while True:
 
         dominant_color = color_thief.get_color(quality=1)
 
-        blinkt.set_all(255, 0, 0, 0.7)
+        blinkt.set_all(dominant_color[0], dominant_color[1], dominant_color[2], 0.7)
 
         blinkt.show()
 
