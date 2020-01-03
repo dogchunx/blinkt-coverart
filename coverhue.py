@@ -5,6 +5,8 @@ import json
 import blinkt
 from colorthief import ColorThief
 
+lastAlbum = ''
+
 while True:
 
     req = requests.get(
@@ -20,20 +22,27 @@ while True:
         data = json.loads(req.text)
         
         coverUrl = data["item"]["album"]["images"][0]["url"]
+        currentAlbum = data["item"]["album"]["name"]
+        artistName = data["item"]["artists"][0]["name"]
+                    
+        print(artistName + ': ' + currentAlbum)
 
-        print(data["item"]["artists"][0]["name"] + ': ' + data["item"]["album"]["name"])
+        if currentAlbum != lastAlbum:
 
-        urllib.request.urlretrieve(coverUrl, 'image.jpg')
+            urllib.request.urlretrieve(coverUrl, 'image.jpg')
 
-        color_thief = ColorThief('image.jpg')
+            color_thief = ColorThief('image.jpg')
 
-        dominant_color = color_thief.get_color(quality=1)
+            dominant_color = color_thief.get_color(quality=1)
 
-        blinkt.set_all(dominant_color[0], dominant_color[1], dominant_color[2], 0.9)
+            blinkt.set_all(dominant_color[0], dominant_color[1], dominant_color[2], 0.9)
 
-        blinkt.show()
+            blinkt.show()
 
-        print(dominant_color)
+            print(dominant_color)
+        else:
+            print('not changed = skipping')
+        lastAlbum = currentAlbum
     else:
         print(req)
         
