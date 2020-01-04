@@ -37,7 +37,7 @@ while True:
 
             color_thief = ColorThief('image.jpg')
 
-            dominant_color = color_thief.get_color(quality=1)
+            dominant_color = color_thief.get_color(quality=10)
 
             blinkt.set_all(dominant_color[0], dominant_color[1], dominant_color[2], 0.9)
 
