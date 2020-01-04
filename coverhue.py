@@ -6,6 +6,7 @@ import blinkt
 from colorthief import ColorThief
 
 lastAlbum = ''
+brightness = 0.9
 
 blinkt.set_clear_on_exit
 
@@ -19,7 +20,7 @@ while True:
         url = 'https://api.spotify.com/v1/me/player/currently-playing', 
         headers={   'content-type': 'application/json', 
                     'accept': 'application/json',
-                    'Authorization': 'Bearer BQAlu96QX1k4DTDZdlACRJtSaOnTRti3_xB4v2tmA--4tkcJc5AeKGc67SzuQ3z6pSJXdo9_0CtAZt2SKEpHYVg88OUwAS86Bx0lVmLD3cmq21BLVKRh2_GAuonkyAZTZGzR40pX6_vllM69tw'})
+                    'Authorization': 'Bearer BQCkwTJTwdT9B155T8e3s1DhVxJ58hkaXkvlnmpU8i6gjSuRwFmzMWeK8nBNR5k9gRHp9CQesH9fM3dwTdffAM1JK79k8afEuLGobxrkwNYlaEAwykyr4XGr5vEdLM-pWPWzQKgcMg-lICZZAw'})
 
     if req.status_code == 200:
 
@@ -44,7 +45,7 @@ while True:
             while count <= 7:
                 currentColour = dominant_colors[count]
                 print(currentColour)
-                blinkt.set_pixel(count, currentColour[0], currentColour[1], currentColour[2], 0.9)
+                blinkt.set_pixel(count, currentColour[0], currentColour[1], currentColour[2], brightness)
                 count = count + 1
 
             #blinkt.set_all(dominant_color[0], dominant_color[1], dominant_color[2], 0.9)
