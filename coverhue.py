@@ -37,12 +37,14 @@ while True:
 
             color_thief = ColorThief('image.jpg')
 
-            dominant_colors = color_thief.get_palette(color_count = 8, quality=10)
-            
+            dominant_colors = color_thief.get_palette(color_count = 9, quality=10)
+
             count = 0
 
             while count <= 7:
-                blinkt.set_pixel(count, dominant_colors[count][0], dominant_colors[count][1], dominant_colors[count][1], 0.9)
+                currentColour = dominant_colors[count]
+                print(currentColour)
+                blinkt.set_pixel(count, currentColour[0], currentColour[1], currentColour[2], 0.9)
                 count = count + 1
 
             #blinkt.set_all(dominant_color[0], dominant_color[1], dominant_color[2], 0.9)
@@ -51,7 +53,7 @@ while True:
 
             #print(dominant_color)
         else:
-            print('not changed = skipping')
+            print('not changed - skipping')
         lastAlbum = currentAlbum
     else:
         print(req)
