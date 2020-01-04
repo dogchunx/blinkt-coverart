@@ -49,7 +49,7 @@ while True:
 
             blinkt.show()
 
-            print(dominant_color)
+            #print(dominant_color)
         else:
             print('not changed = skipping')
         lastAlbum = currentAlbum
