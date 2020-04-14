@@ -19,7 +19,7 @@ while True:
         url = 'https://api.spotify.com/v1/me/player/currently-playing', 
         headers={   'content-type': 'application/json', 
                     'accept': 'application/json',
-                    'Authorization': 'Bearer BQAlu96QX1k4DTDZdlACRJtSaOnTRti3_xB4v2tmA--4tkcJc5AeKGc67SzuQ3z6pSJXdo9_0CtAZt2SKEpHYVg88OUwAS86Bx0lVmLD3cmq21BLVKRh2_GAuonkyAZTZGzR40pX6_vllM69tw'})
+                    'Authorization': 'Bearer [TOKEN]'})
 
     if req.status_code == 200:
 
